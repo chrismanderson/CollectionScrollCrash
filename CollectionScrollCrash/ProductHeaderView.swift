@@ -154,7 +154,7 @@ class ProductHeaderView: UIView {
 
     func configure(_ product: Product, available: Bool, mealInCart: Bool = false, condensed: Bool = true) {
         initialLoad = true
-        titleLabel.text = product.id.description + product.title
+        titleLabel.text = product.title
         dietaryRestrictionsLabel.text = product.dietaryRestrictionList
         subtitleLabel.text = condensed ? product.subtitle : product.summary
         subtitleLabel.textAlignment = .left

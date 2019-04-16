@@ -23,7 +23,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var cellSizeCache: [IndexPath : NSValue] = [:]
 
     lazy var data: Products = {
-        let url = Bundle.main.url(forResource: "meals", withExtension: "json")!
+        let url = Bundle.main.url(forResource: "products", withExtension: "json")!
 
         do {
             let jsonData = try Data(contentsOf: url)
