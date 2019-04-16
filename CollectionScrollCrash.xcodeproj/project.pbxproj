@@ -20,7 +20,6 @@
 		83B6AC6322666F510003D365 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC6222666F510003D365 /* Label.swift */; };
 		83B6AC6522666FBE0003D365 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC6422666FBE0003D365 /* Font.swift */; };
 		83B6AC672266702D0003D365 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC662266702D0003D365 /* Product.swift */; };
-		83B6AC6E226677590003D365 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B6AC6D226677590003D365 /* SDWebImage.framework */; };
 		83B6AC79226682200003D365 /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B6AC78226682200003D365 /* products.json */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +39,6 @@
 		83B6AC6222666F510003D365 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		83B6AC6422666FBE0003D365 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		83B6AC662266702D0003D365 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		83B6AC6D226677590003D365 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		83B6AC78226682200003D365 /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -49,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B6AC6E226677590003D365 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +58,6 @@
 			children = (
 				83613FAB2265108500E3ED62 /* CollectionScrollCrash */,
 				83613FAA2265108500E3ED62 /* Products */,
-				FDE541AF37F93780BBE94007 /* Pods */,
-				83B6AC6C226677580003D365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,21 +91,6 @@
 			path = CollectionScrollCrash;
 			sourceTree = "<group>";
 		};
-		83B6AC6C226677580003D365 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				83B6AC6D226677590003D365 /* SDWebImage.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FDE541AF37F93780BBE94007 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -121,7 +101,6 @@
 				83613FA52265108500E3ED62 /* Sources */,
 				83613FA62265108500E3ED62 /* Frameworks */,
 				83613FA72265108500E3ED62 /* Resources */,
-				83B6AC6F226677650003D365 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -177,29 +156,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		83B6AC6F226677650003D365 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83613FA52265108500E3ED62 /* Sources */ = {

@@ -6,8 +6,9 @@
 //  Copyright © 2016 Galley. All rights reserved.
 //
 
-import SDWebImage
 import UIKit
+
+let imageCache = NSCache<AnyObject, UIImage>()
 
 class ProductHeaderView: UIView {
     /// The meal assigned to this cell
@@ -173,13 +174,23 @@ class ProductHeaderView: UIView {
         }
         self.product = product
 
-        mealImageView.sd_setImage(with: product.imageUrl) { (image, _, _, _) in
-            if image != nil && self.initialLoad {
-                self.mealImageView.alpha = 0.0
-                UIView.animate(withDuration: 0.15) {
-                    self.mealImageView.alpha = 1.0
+        if let cachedImage = imageCache.object(forKey: product.imageUrl as AnyObject) {
+            self.mealImageView.image = cachedImage
+        } else {
+            URLSession.shared.dataTask(with: product.imageUrl) { (data, response, error) in
+                if let imageData = data {
+                    DispatchQueue.main.async {
+                        let imageToCache = UIImage(data: imageData)
+                        imageCache.setObject(imageToCache!, forKey: product.imageUrl as AnyObject)
+                        self.mealImageView.image = imageToCache
+                        self.mealImageView.alpha = 0.0
+                        UIView.animate(withDuration: 0.15) {
+                            self.mealImageView.alpha = 1.0
+                        }
+                    }
                 }
-            }
+
+            }.resume()
         }
     }
 
