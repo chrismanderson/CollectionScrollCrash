@@ -20,11 +20,23 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return FlowLayout()
     }()
 
-    lazy var data: [DemoItem] = {
-        return DemoItem.generate(numberOfItems)
+    var cellSizeCache: [IndexPath : NSValue] = [:]
+
+    lazy var data: Products = {
+        let url = Bundle.main.url(forResource: "meals", withExtension: "json")!
+
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+            return try decoder.decode(Products.self, from: jsonData)
+        } catch {
+            print(error)
+            return Products(products: [])
+        }
     }()
 
-    var cellSizeCache: [IndexPath : NSValue] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +52,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInsetAdjustmentBehavior = .always
-        collectionView.register(Cell.self, forCellWithReuseIdentifier: "MyCell")
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: "MyCell")
     }
 
     @objc func refreshView() {
@@ -61,20 +73,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: UICollectionViewDataSource
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return data.count
+        return data.products.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! Cell
-        let object = data[indexPath.row]
-        cell.configure(object)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as! ProductCell
+        let object = data.products[indexPath.row]
+        cell.configure(object, available: Bool.random())
         return cell
     }
 
     // MARK: UICollectionViewDelegateFlowLayout
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width - 40, height: 100)
+        return CGSize(width: view.bounds.width - 40, height: view.bounds.width)
     }
 
     // MARK: UICollectionViewDelegate

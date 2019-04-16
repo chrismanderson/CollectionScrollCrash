@@ -15,6 +15,13 @@
 		83613FC42265239D00E3ED62 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83613FC32265239D00E3ED62 /* UIView+Autolayout.swift */; };
 		83613FC622653D0700E3ED62 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83613FC522653D0700E3ED62 /* FlowLayout.swift */; };
 		83613FCA2265781900E3ED62 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83613FC92265781900E3ED62 /* Cell.swift */; };
+		83B6AC5F22666EEF0003D365 /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC5E22666EEF0003D365 /* ProductCell.swift */; };
+		83B6AC6122666F200003D365 /* ProductHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC6022666F200003D365 /* ProductHeaderView.swift */; };
+		83B6AC6322666F510003D365 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC6222666F510003D365 /* Label.swift */; };
+		83B6AC6522666FBE0003D365 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC6422666FBE0003D365 /* Font.swift */; };
+		83B6AC672266702D0003D365 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B6AC662266702D0003D365 /* Product.swift */; };
+		83B6AC6E226677590003D365 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B6AC6D226677590003D365 /* SDWebImage.framework */; };
+		83B6AC712266794F0003D365 /* meals.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B6AC702266794F0003D365 /* meals.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		83613FC32265239D00E3ED62 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
 		83613FC522653D0700E3ED62 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
 		83613FC92265781900E3ED62 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		83B6AC5E22666EEF0003D365 /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		83B6AC6022666F200003D365 /* ProductHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHeaderView.swift; sourceTree = "<group>"; };
+		83B6AC6222666F510003D365 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		83B6AC6422666FBE0003D365 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		83B6AC662266702D0003D365 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		83B6AC6D226677590003D365 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
+		83B6AC702266794F0003D365 /* meals.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = meals.json; path = ../../meals.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B6AC6E226677590003D365 /* SDWebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +62,7 @@
 				83613FAB2265108500E3ED62 /* CollectionScrollCrash */,
 				83613FAA2265108500E3ED62 /* Products */,
 				FDE541AF37F93780BBE94007 /* Pods */,
+				83B6AC6C226677580003D365 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,8 +86,22 @@
 				83613FB02265108600E3ED62 /* Assets.xcassets */,
 				83613FB52265108600E3ED62 /* Info.plist */,
 				83613FB22265108600E3ED62 /* LaunchScreen.storyboard */,
+				83B6AC5E22666EEF0003D365 /* ProductCell.swift */,
+				83B6AC6022666F200003D365 /* ProductHeaderView.swift */,
+				83B6AC6222666F510003D365 /* Label.swift */,
+				83B6AC6422666FBE0003D365 /* Font.swift */,
+				83B6AC662266702D0003D365 /* Product.swift */,
+				83B6AC702266794F0003D365 /* meals.json */,
 			);
 			path = CollectionScrollCrash;
+			sourceTree = "<group>";
+		};
+		83B6AC6C226677580003D365 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83B6AC6D226677590003D365 /* SDWebImage.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FDE541AF37F93780BBE94007 /* Pods */ = {
@@ -91,6 +121,7 @@
 				83613FA52265108500E3ED62 /* Sources */,
 				83613FA62265108500E3ED62 /* Frameworks */,
 				83613FA72265108500E3ED62 /* Resources */,
+				83B6AC6F226677650003D365 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -140,11 +171,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				83613FB12265108600E3ED62 /* Assets.xcassets in Resources */,
+				83B6AC712266794F0003D365 /* meals.json in Resources */,
 				83613FB42265108600E3ED62 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		83B6AC6F226677650003D365 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SDWebImage.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		83613FA52265108500E3ED62 /* Sources */ = {
@@ -153,10 +208,15 @@
 			files = (
 				83613FAF2265108500E3ED62 /* ViewController.swift in Sources */,
 				83613FC42265239D00E3ED62 /* UIView+Autolayout.swift in Sources */,
+				83B6AC6522666FBE0003D365 /* Font.swift in Sources */,
 				83613FAD2265108500E3ED62 /* AppDelegate.swift in Sources */,
 				83613FCA2265781900E3ED62 /* Cell.swift in Sources */,
+				83B6AC672266702D0003D365 /* Product.swift in Sources */,
 				83613FC622653D0700E3ED62 /* FlowLayout.swift in Sources */,
+				83B6AC6322666F510003D365 /* Label.swift in Sources */,
+				83B6AC5F22666EEF0003D365 /* ProductCell.swift in Sources */,
 				8316CADD2266207D004B4D23 /* DemoItem.swift in Sources */,
+				83B6AC6122666F200003D365 /* ProductHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +356,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN6BHM2L9X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CollectionScrollCrash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +378,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KN6BHM2L9X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CollectionScrollCrash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
